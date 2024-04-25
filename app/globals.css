@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+@layer components {
+  body {
+    @apply bg-neutral-900 text-neutral-100;
+  }
+
+  .formInput input {
+    @apply bg-transparent border-2 rounded-md border-neutral-500 text-neutral-100 m-2 w-[80%] h-12 p-2;
+  }
+
+  .friends-container {
+    @apply flex flex-col w-[10%] h-screen bg-neutral-800 border-r-2 border-neutral-600;
+  }
+
+  .friend-item {
+    @apply text-center text-[14px] text-neutral-300 p-2 border-b-[1px] border-neutral-700 text-ellipsis whitespace-nowrap overflow-hidden;
+  }
+
+  .friend-item:hover {
+    @apply bg-neutral-600;
+  }
+
+  .chat-container {
+    @apply bg-neutral-950 w-full h-full overflow-y-scroll flex flex-col;
+  }
+
+  .chat-container::-webkit-scrollbar {
+    @apply w-2
+  }
+
+  .chat-container::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-md;
+  }
+
+  .message {
+    @apply m-2 p-2 bg-neutral-800 rounded-xl hover:bg-neutral-700;
+  }
+
+  .message p {
+    @apply text-neutral-50 text-wrap;
+  }
+
+} 
